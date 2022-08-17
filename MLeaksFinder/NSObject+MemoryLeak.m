@@ -51,7 +51,9 @@ const void *const kLatestSenderKey = &kLatestSenderKey;
     [MLeakedObjectProxy addLeakedObject:self];
     
     NSString *className = NSStringFromClass([self class]);
-    NSLog(@"Possibly Memory Leak.\nIn case that %@ should not be dealloced, override -willDealloc in %@ by returning NO.\nView-ViewController stack: %@", className, className, [self viewStack]);
+//    NSLog(@"Possibly Memory Leak.\nIn case that %@ should not be dealloced, override -willDealloc in %@ by returning NO.\nView-ViewController stack: %@", className, className, [self viewStack]);
+    NSLog(@"可能是内存泄漏。\n 如果不应释放 %@，请通过返回 NO 覆盖 %@ 中的 -willDealloc。\n View-ViewController 堆栈: %@", className, className, [self viewStack]);
+    
 }
 
 - (void)willReleaseObject:(id)object relationship:(NSString *)relationship {
